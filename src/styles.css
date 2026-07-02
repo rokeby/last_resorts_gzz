@@ -497,7 +497,8 @@ h1 {
   margin: 10px 0 0;
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
+  line-height: 1.45;
   color: #9a9a9a;
 }
 
@@ -537,7 +538,7 @@ h1 {
 
 .what-we-do-item {
   display: grid;
-  grid-template-columns: minmax(0, 8fr) minmax(96px, 4fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   column-gap: clamp(20px, 3vw, 42px);
   row-gap: 6px;
   align-items: start;
@@ -601,8 +602,9 @@ h1 {
 .section-image img {
   display: block;
   width: 100%;
-  height: 100%;
-  aspect-ratio: 2066 / 1204;
+  /* Height is viewport-height based so images keep their vertical size
+     as the page width narrows (they crop horizontally via cover). */
+  height: clamp(240px, 30vh, 380px);
   object-fit: cover;
   border: 0;
 }
