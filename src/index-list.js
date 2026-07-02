@@ -89,6 +89,47 @@ if (teamRow) {
 const gifDisplay = document.querySelector('.gif-display');
 const gifCaptionOptions = document.querySelectorAll('.gif-caption-option');
 
+const lazyVideos = [...document.querySelectorAll('video')].filter(
+  video => video.dataset.src || video.querySelector('source[data-src]')
+);
+if (lazyVideos.length) {
+  const loadLazyVideo = video => {
+    if (video.dataset.src) {
+      video.src = video.dataset.src;
+      video.removeAttribute('data-src');
+    }
+    video.querySelectorAll('source[data-src]').forEach(source => {
+      source.src = source.dataset.src;
+      source.removeAttribute('data-src');
+    });
+    video.load();
+    video.play().catch(() => {
+      /* ignore autoplay interruptions */
+    });
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observedLazyVideos = new WeakMap();
+    const lazyVideoObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          lazyVideoObserver.unobserve(entry.target);
+          loadLazyVideo(observedLazyVideos.get(entry.target));
+        });
+      },
+      { rootMargin: '500px 0px' }
+    );
+    lazyVideos.forEach(video => {
+      const target = video.closest('figure') || video;
+      observedLazyVideos.set(target, video);
+      lazyVideoObserver.observe(target);
+    });
+  } else {
+    lazyVideos.forEach(loadLazyVideo);
+  }
+}
+
 if (gifDisplay && gifCaptionOptions.length) {
   const selectOption = option => {
     gifDisplay.src = option.dataset.gifSrc;

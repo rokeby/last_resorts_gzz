@@ -10,7 +10,10 @@ const EXPO = -100;        // fatness: the font's EXPO axis (-100 = fattest .. +1
 const SIZE_FACTOR = 0.08; // title size relative to viewport width
 const SIZE_MAX = 150;     // hard cap in CSS px
 const LETTER_SPACING = -0.03; // in em
-const TITLE_CENTER_Y = 0.4; // vertical center of the title, as a fraction of the hero
+const TITLE_CENTER_Y = 0.34; // vertical center of the title, as a fraction of the hero
+const PARTICLE_SPACING = 1.62;
+const PARTICLE_SIZE = 1.28;
+const PARTICLE_OPACITY = 0.72;
 const COLOR = '#f9f9f4';
 // ---------------------------------------------------------------------------
 
@@ -28,6 +31,7 @@ if (app && canvas) {
   let hovering = false;
   let time = 0;
   let fontDataUrl = null;
+  let animationFrameId = 0;
 
   async function loadFontDataUrl() {
     if (fontDataUrl) return fontDataUrl;
@@ -87,8 +91,8 @@ if (app && canvas) {
     octx.drawImage(img, 0, 0);
     const data = octx.getImageData(0, 0, off.width, off.height).data;
 
-    // Fine grid so the letterforms keep their shape; each lit cell -> one dot.
-    const cell = Math.max(2, Math.round(fontSize / 110));
+    // Fine enough to keep the letterforms, coarse enough to avoid excess work.
+    const cell = Math.max(2, Math.round((fontSize / 110) * PARTICLE_SPACING));
 
     // First gather the lit cells and their bounding box, so we can recenter the
     // word precisely (SVG baseline placement is unreliable across browsers).
@@ -127,10 +131,17 @@ if (app && canvas) {
     }
   }
 
+  function startFrameLoop() {
+    if (!animationFrameId) animationFrameId = requestAnimationFrame(frame);
+  }
+
   function frame() {
+    animationFrameId = 0;
     time += 0.016;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = COLOR;
+
+    let visibleParticles = 0;
 
     for (const p of particles) {
       const destX = hovering ? p.tx : p.sx;
@@ -142,26 +153,37 @@ if (app && canvas) {
       p.o += (destO - p.o) * 0.06;
 
       if (p.o < 0.01) continue;
+      visibleParticles += 1;
 
       const settle = Math.max(0, 1 - (Math.abs(destX - p.x) + Math.abs(destY - p.y)) * 0.02);
       const jx = hovering ? Math.sin(time * 2.4 + p.seed) * 0.6 * settle : 0;
       const jy = hovering ? Math.cos(time * 2.0 + p.seed) * 0.6 * settle : 0;
-      const s = Math.max(1, p.size * 0.95);
+      const s = Math.max(1, p.size * PARTICLE_SIZE);
 
-      ctx.globalAlpha = p.o;
+      ctx.globalAlpha = p.o * PARTICLE_OPACITY;
       ctx.fillRect(p.x + jx, p.y + jy, s, s);
     }
     ctx.globalAlpha = 1;
-    requestAnimationFrame(frame);
+
+    if (hovering || visibleParticles > 0) startFrameLoop();
   }
 
-  app.addEventListener('pointerenter', () => (hovering = true));
-  app.addEventListener('pointerleave', () => (hovering = false));
+  app.addEventListener('pointerenter', () => {
+    hovering = true;
+    startFrameLoop();
+  });
+  app.addEventListener('pointerleave', () => {
+    hovering = false;
+    startFrameLoop();
+  });
 
   let resizeId;
   window.addEventListener('resize', () => {
     clearTimeout(resizeId);
-    resizeId = setTimeout(buildParticles, 150);
+    resizeId = setTimeout(async () => {
+      await buildParticles();
+      startFrameLoop();
+    }, 150);
   });
 
   async function init() {
@@ -171,7 +193,7 @@ if (app && canvas) {
       /* ignore */
     }
     await buildParticles();
-    frame();
+    startFrameLoop();
   }
 
   init();
