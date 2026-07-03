@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Gardens</title>
+    <script type="module" crossorigin src="/assets/main-DZHY7-xS.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-C7UQ-N7a.css">
+  </head>
+  <body class="takram-page">
+    <main id="app">
+      <canvas id="three"></canvas>
+      <canvas id="ascii"></canvas>
+      <canvas
+        id="title"
+        class="hover-title-canvas"
+        role="img"
+        aria-label="Cloud Gardens"
+      ></canvas>
+      <div class="hero-fade" aria-hidden="true"></div>
+      <p class="hero-subtitle">
+        A protocol for cultivating clouds in the West Mediterranean Basin,
+        initiated by Last Resorts at
+        <a
+          class="inline-link"
+          href="https://tba21.org/organismoanouno"
+          target="_blank"
+          rel="noopener"
+          >Organismo</a
+        >,
+        <a
+          class="inline-link"
+          href="https://tba21.org/"
+          target="_blank"
+          rel="noopener"
+          >TBA-21</a
+        >,
+        <a
+          class="inline-link"
+          href="https://www.museothyssen.org/"
+          target="_blank"
+          rel="noopener"
+          >Museo Nacional Thyssen-Bornemisza</a
+        >
+        and the Basque Centre for Climate Change (BC3)
+      </p>
+    </main>
+
+    <section class="scroll-index" aria-label="Essay">
+      <article class="essay">
+        <!--h1 class="essay-title">Cloud Gardens</h1-->
+
+        <p class="essay-lead">
+          <strong>Cloud Gardens</strong> is a grassroots geoengineering proposal
+          for maintaining the land-atmospheric water cycle in the
+          <strong>West Mediterranean Basin</strong> through land-use planning
+          and cloud-formation through evapotranspiration. Taking the
+          <strong>Río Palancia</strong> valley in northern Valencia as its pilot
+          site, the project brings together
+          <strong
+            >community dialogue, scenario planning, scientific modelling and a
+            game-engine narrative tool</strong
+          >. These components establish the Cloud Garden as both
+          <strong>a public space and a protocol</strong> for cultivating,
+          stewarding and re-imagining the collective relationship between
+          <strong>land, water and atmosphere</strong>.
+        </p>
+
+        <figure class="intro-video">
+          <video
+            poster="./video/cloud-clip-poster.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="none"
+            aria-label="Cloud Gardens video"
+          >
+            <source data-src="./video/cloud-clip.webm" type="video/webm" />
+            <source data-src="./video/cloud-clip.mp4" type="video/mp4" />
+          </video>
+        </figure>
+
+        <section class="location-section" aria-labelledby="location-title">
+          <h2 id="location-title">Location</h2>
+        </section>
+
+        <figure class="essay-figure map-figure">
+          <div class="gif-frame">
+            <img
+              class="gif-display"
+              src="./gifs/satellite-true-colors.gif"
+              alt="Annual cloud-free Landsat observations of the Palancia catchment and Marjal dels Moros (1984–2026)"
+            />
+          </div>
+          <div
+            class="gif-caption-columns"
+            role="tablist"
+            aria-label="Satellite imagery layer"
+          >
+            <div
+              class="gif-caption-option is-active"
+              role="tab"
+              tabindex="0"
+              aria-selected="true"
+              data-gif-src="./gifs/satellite-true-colors.gif"
+              data-gif-alt="Annual cloud-free Landsat observations of the Palancia catchment and Marjal dels Moros (1984–2026)"
+            >
+              <span class="cap-main">Satellite True Colors</span>
+              <span class="cap-alt"
+                >Annual cloud-free Landsat observations of the Palancia
+                catchment and Marjal dels Moros (1984–2026)</span
+              >
+              <a
+                class="cap-coords"
+                href="https://www.google.com/maps/@39.77,-0.60,10z"
+                target="_blank"
+                rel="noopener"
+                >39.58–39.96° N, 1.02–0.18° W</a
+              >
+            </div>
+            <div
+              class="gif-caption-option"
+              role="tab"
+              tabindex="0"
+              aria-selected="false"
+              data-gif-src="./gifs/satellite-hydrological.gif"
+              data-gif-alt="Annual surface water and wetland dynamics (NDWI) across the Palancia catchment and Marjal dels Moros (1984–2026)"
+            >
+              <span class="cap-main">Satellite Hydrological Map</span>
+              <span class="cap-alt"
+                >Annual surface water and wetland dynamics (NDWI) across the
+                Palancia catchment and Marjal dels Moros (1984–2026)</span
+              >
+              <a
+                class="cap-coords"
+                href="https://www.google.com/maps/@39.77,-0.60,10z"
+                target="_blank"
+                rel="noopener"
+                >39.58–39.96° N, 1.02–0.18° W</a
+              >
+            </div>
+          </div>
+          <div class="gif-credit">Imagery: Google Earth</div>
+        </figure>
+
+        <section class="what-we-do" aria-labelledby="what-we-do-title">
+          <h2 id="what-we-do-title">Proposal</h2>
+
+          <article class="what-we-do-item">
+            <div class="what-we-do-copy">
+              <p class="section-label">01 Hydrological context</p>
+              <p>
+                Found on the western mediterranean coast sits the historical
+                rice-growing lands of Valencia – situated between the foothills
+                of el Toro and the wetlands that hug the coastline. Once
+                characterized by careful cultivation and inherited water
+                management practices, the natural wetlands of the past were
+                systematically drained and replaced by fields of citrus. Like
+                many regions in Europe during the 19th-20th century, wetlands
+                were seen both as sources of disease as well as opportunity for
+                economic reinvention. Large scale alterations of land use can
+                have drastic consequences on atmospheric dynamics. Valencia has
+                long lived with the legacies of flooding, evident in the
+                waterless river valleys that sculpt everyday infrastructure.
+                Long-term atmospheric monitoring has confirmed that the
+                combination of climate change and land use change is making
+                floods more intense and more frequent. The conversion of natural
+                vegetation to industrial cropland reduces moisture and increases
+                heat. What was once a predictable cycle of summer rain has
+                succumbed to a system trapped by a state of movement from the
+                sea to land with conditions too dry and hot to maintain moisture
+                within its valleys. Over the course of an entire summer season,
+                sea air is pushed too high into the atmosphere, and its build up
+                leads to the formation of catastrophic flood-making clouds,
+                sometimes kilometers high. In our Anthropocene these realities
+                are all too common, built from our manufactured, homogenous,
+                water-starved lands that can alter the hydrological dynamics of
+                large regions and produce nearly irreversible and undesirable
+                climatic regimes. Is it possible to stabilise the atmospheric
+                system by changing our lands once again?
+              </p>
+            </div>
+            <figure
+              class="section-image section-image-site-context"
+              data-image-name="image-site-context"
+            >
+              <img
+                src="./script-images/01.gif"
+                alt="Proposal section 01 visual"
+                loading="lazy"
+              />
+            </figure>
+          </article>
+
+          <article class="what-we-do-item">
+            <div class="what-we-do-copy">
+              <p class="section-label">02 Problem</p>
+              <p>
+                Our prototype is situated across the entire palancia river
+                valley, weaving together landscapes often seen as detached, and
+                follows the river path from the foothill mountains around El
+                Toro, through the valley and where it meets the sea at the port
+                of Sagunto. Historically, this hydrological system has been
+                repeatedly reconfigured. What appears as natural variation in
+                the terrain alludes to moments where water is slowed through
+                terraces, redirected through irrigation channels, extracted
+                through aquifers. Reading these interventions simultaneously we
+                begin to register the river as an expanded geoengineered system.
+                The valley becomes a site of exchange between the surface,
+                subsurface extraction, and atmosphere. Our scientific partners
+                at the
+                <a
+                  class="inline-link"
+                  href="https://www.bc3research.org/en/"
+                  target="_blank"
+                  rel="noopener"
+                  >Basque Centre for Climate Change</a
+                >
+                have established
+                <a
+                  class="inline-link"
+                  href="https://journals.ametsoc.org/view/journals/clim/18/5/jcli-3283.1.xml"
+                  target="_blank"
+                  rel="noopener"
+                  >a meso-scale model of the atmospheric flows</a
+                >
+                of the West Mediterranean, which has demonstrated that
+                vegetation loss and decreasing evapotranspiration has led to the
+                gradual decoupling between the terrestrial and atmospheric water
+                cycles. The answer to this problem is both simple and deeply
+                complex. How can we develop economically viable and sustainable
+                ways of stewarding the land and maintaining the water cycle
+                through evapotranspiration? How can we negotiate consensus
+                around atmospheric stability as a common good, across complex
+                stakeholder and intergenerational horizons? What can we learn by
+                looking to the past, and through the collective practice of
+                reimagining future water-land configurations that recouple our
+                water cycles?
+              </p>
+            </div>
+            <figure
+              class="section-image section-image-annotated-flyover"
+              data-image-name="image-annotated-flyover"
+            >
+              <img
+                src="./script-images/02.jpg"
+                alt="Proposal section 02 visual"
+                loading="lazy"
+              />
+            </figure>
+          </article>
+
+          <article class="what-we-do-item">
+            <div class="what-we-do-copy">
+              <p class="section-label">03 The cloud garden</p>
+              <p>
+                The Cloud Garden is our prototype to address these questions. as
+                a process of collectively sculpting the clouds through how we
+                work the land, this infrastructural intervention combines across
+                social, material and computational tools. From zen gardens to
+                colonial botany, land art to continental-scale afforestation,
+                gardens and gardening have long served as experimental
+                interfaces for environmental, scientific and philosophical
+                speculation. In this context, the Cloud Garden operates as a
+                narrative-driven hydrological intervention: a speculative garden
+                designed to stage relationships between land, water, and
+                atmosphere as something that can be collectively observed,
+                imagined, and laboured towards. Within our grassroots
+                geoengineering prototype we hope to align visions between the
+                scientific understanding of regional atmospheric scenarios with
+                community perspectives. Through both physical experimentation
+                and digital simulation, the project proposes situated gestures
+                that might contribute to reconnecting not only land use and
+                hydrological cycles, but stakeholders and multi-level
+                governance. The intention is to foster transscalar forms of
+                resilience, highlighting how responses to climate instability
+                emerge across diverse scales in the Palancia Valley, from the
+                seed selection of the farmer, through urban planning strategies
+                approved by Valencian Generalitat, to community owned and
+                managed land by Agro’s activists.
+              </p>
+            </div>
+            <figure
+              class="section-image section-image-cloud-gardening"
+              data-image-name="image-cloud-gardening"
+            >
+              <img
+                src="./script-images/03.jpg"
+                alt="Proposal section 03 visual"
+                loading="lazy"
+              />
+            </figure>
+          </article>
+
+          <article class="what-we-do-item">
+            <div class="what-we-do-copy">
+              <p class="section-label">04 Methodology</p>
+              <p>
+                Our methodology operates across three interconnected phases.
+                First, a space of gathering. Working with BC3, and their
+                established network of stakeholders, we plan to facilitate a
+                space for dialogue and negotiation, exploring local perspectives
+                around food, land cultivation and governance to foster trust and
+                mutual understanding. Second, a digital simulation, the
+                prototype of which you are seeing here. A simulation of the
+                landscape in which stories, scenarios and speculations developed
+                through iterative co-production can be made accessible. Third, a
+                physical garden, to cultivate long-term and local vegetation
+                that restores and encourages historic summer rains in the
+                region.The cloud garden would function as a work of land art, a
+                community space designed to research and promote techniques for
+                how land sculpts the sky within future imaginaries. Through
+                shared knowledge, scientific research and negotiation, the
+                ambition of the cloud garden is to establish a distributed
+                planting protocol. This replicable framework, rooted in
+                atmospheric science and environmental management, informs the
+                selection of site, participants and garden design.
+              </p>
+            </div>
+            <figure
+              class="section-image section-image-methodology"
+              data-image-name="image-methodology"
+            >
+              <img
+                src="./script-images/04.jpg"
+                alt="Proposal section 04 visual"
+                loading="lazy"
+              />
+            </figure>
+          </article>
+
+          <article class="what-we-do-item">
+            <div class="what-we-do-copy">
+              <p class="section-label">05 The Eagle Nest</p>
+              <p>
+                To interface between the physical and the digital, part of our
+                methodology includes the translation of 2-dimensional field
+                drawings to digital 3-dimensional sculptural objects. In this
+                digital space, we populate the terrain with sounds and visuals,
+                creating a platform for exploring and sharing collective futures
+                from the perspective of community, and industry. For example,
+                here, Erik, a volunteer at La Marjal D’Almenara shares with us
+                his methods for adapting to challenges of biodiversity loss. He
+                draws a diagram of a Sea Eagle nest he helped build in the
+                marsh.
+              </p>
+            </div>
+            <figure
+              class="section-image section-image-eagle-nest-story"
+              data-image-name="image-eagle-nest-story"
+            >
+              <img
+                src="./script-images/05.jpg"
+                alt="Proposal section 05 visual"
+                loading="lazy"
+              />
+            </figure>
+          </article>
+
+          <article class="what-we-do-item">
+            <div class="what-we-do-copy">
+              <p class="section-label">
+                06 The Oak and Truffle, an existing postive loop
+              </p>
+              <p>
+                Within the Palancia Valley foothills, here, Maria Jose with the
+                BC3 , introduces to us current social-ecological initiatives
+                established through truffles and oak trees. Here we learn how
+                agriculture has adapted in response to climate and global supply
+                change. From citrus farms to truffles that grow among the
+                mycelia at the roots of oak trees, a sustainable mode of land
+                stewardship… Drawings and audio recordings function as digital
+                artefacts that are continuously adapted and iterated upon,
+                expanding a common understanding of the site.
+              </p>
+            </div>
+            <figure
+              class="section-image section-image-oak-truffles-story"
+              data-image-name="image-oak-truffles-story"
+            >
+              <img
+                src="./script-images/06.jpg"
+                alt="Proposal section 06 visual"
+                loading="lazy"
+              />
+            </figure>
+          </article>
+
+          <article class="what-we-do-item">
+            <div class="what-we-do-copy">
+              <p class="section-label">07 Cloud Garden as Protocol</p>
+              <p>
+                Concretely, we aim for a pilot project of 9-12 months in which
+                the groundwork of field research, community dialogue, and
+                gatherings, scientific and economic research. We would develop
+                the social and analytical tools for each step of its
+                implementation, from archiving atmospheric narratives in the
+                digital garden, to building visually explorable stakeholder
+                scenarios, assessing economic prospects and identifying
+                strategic land sites where interventions can be tested.
+                Gatherings will inform decisions regarding site selection,
+                planting strategies and prospective landscape design, exploring
+                how small-scale interventions could contribute to restoring
+                water retention processes within the territory. Simultaneously,
+                the project seeks to build a local team capable of sustaining
+                the initiative, so that over time the role of the initiating
+                institutions progressively diminishes and the garden becomes a
+                locally-run space, a question of both culture and economy.
+                Beyond the Palancia pilot, tools and methodologies may evolve
+                into protocols that can be adapted to other Spanish wetland and
+                hydrologically fragile territories, as well as across the wider
+                Mediterranean region. As additional sites emerge, a network of
+                Cloud Gardens could operate as a distributed observatory and
+                ecological archive, documenting environmental change, community
+                knowledge, and situated adaptation practices.
+              </p>
+            </div>
+            <figure
+              class="section-image section-image-potential-scope"
+              data-image-name="image-potential-scope"
+            >
+              <img
+                src="./script-images/07.jpg"
+                alt="Proposal section 07 visual"
+                loading="lazy"
+              />
+            </figure>
+          </article>
+        </section>
+      </article>
+
+      <section class="team-section" aria-labelledby="team-title">
+        <h2 id="team-title">Team</h2>
+        <div class="team-row">
+          <article class="team-member" tabindex="0">
+            <a
+              href="https://www.hyperlinkedbodies.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit Inês Barros website"
+            >
+              <img
+                src="./team/ines-barros.jpeg"
+                alt="Portrait of Inês Barros"
+              />
+            </a>
+            <div class="team-bio">
+              <h3>Inês Barros</h3>
+              <p>
+                Inês Barros investigates artistic practice as ecological
+                gesture, designing speculative devices that operate as
+                ecosystemic prostheses. She develops tools and field experiments
+                exploring more-than-human ecological imaginaries.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-member" tabindex="0">
+            <a
+              href="https://hugofgarcia.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit Hugo Félix García website"
+            >
+              <img
+                src="./team/hugo-felix-garcia.jpg"
+                alt="Portrait of Hugo Félix García"
+              />
+            </a>
+            <div class="team-bio">
+              <h3>Hugo Félix García</h3>
+              <p>
+                Hugo F. García is a designer and researcher working at the
+                intersection of regenerative design, material innovation, and
+                forest ecologies. His work explores how biomaterials can act as
+                catalysts for systemic change.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-member" tabindex="0">
+            <a
+              href="https://www.linkedin.com/in/julianm-guerrero/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit Julián Guerrero profile"
+            >
+              <img
+                src="./team/julian-guerrero.jpg"
+                alt="Portrait of Julián Guerrero"
+              />
+            </a>
+            <div class="team-bio">
+              <h3>Julián Guerrero</h3>
+              <p>
+                Julián Guerrero is a Colombian researcher and project manager
+                based in Madrid, whose practice explores knowledge as an
+                ecological and relational process across research, culture, and
+                territory.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-member" tabindex="0">
+            <a
+              href="https://www.linkedin.com/in/mahwish-khalil"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit Mahwish Khalil profile"
+            >
+              <img
+                src="./team/mahwish-khalil.jpg"
+                alt="Portrait of Mahwish Khalil"
+              />
+            </a>
+            <div class="team-bio">
+              <h3>Mahwish Khalil</h3>
+              <p>
+                Mahwish Khalil is a Pakistani architect and researcher currently
+                teaching at Syracuse University School of Architecture. Through
+                storytelling, design, and spatial analysis, she proposes
+                alternate imaginaries for the built environment.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-member" tabindex="0">
+            <a
+              href="https://www.linkedin.com/in/sarinalincoln"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit Sarina Lincoln profile"
+            >
+              <img
+                src="./team/sarina-lincoln.jpg"
+                alt="Portrait of Sarina Lincoln"
+              />
+            </a>
+            <div class="team-bio">
+              <h3>Sarina Lincoln</h3>
+              <p>
+                Sarina Lincoln is a researcher working on environmental
+                management and governance. Her research focuses on marine
+                social-ecological systems through action-oriented and
+                participatory research and engagement.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-member" tabindex="0">
+            <a
+              href="https://www.criticalzoneobservatory.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit Harry Meadows website"
+            >
+              <img
+                src="./team/harry-meadows.jpg"
+                alt="Portrait of Harry Meadows"
+              />
+            </a>
+            <div class="team-bio">
+              <h3>Harry Meadows</h3>
+              <p>
+                Artist and researcher Harry Meadows leads Critical Zone
+                Observatory, a framework exploring art practice, environmental
+                sensing, and partnerships between artists, games designers, and
+                ecologists.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-member" tabindex="0">
+            <a
+              href="https://luciarebolino.com/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit Lucia Rebolino website"
+            >
+              <img
+                src="./team/lucia-rebolino.jpg"
+                alt="Portrait of Lucia Rebolino"
+              />
+            </a>
+            <div class="team-bio">
+              <h3>Lucia Rebolino</h3>
+              <p>
+                Lucia Rebolino is an artist, architect, and computational
+                designer weaving science and art into counter-cartography, data,
+                and web-based aesthetics, with a focus on environmental justice
+                investigations.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-member" tabindex="0">
+            <a
+              href="https://www.zhexi.info/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Visit Gary Zhexi Zhang website"
+            >
+              <img
+                src="./team/gary-zhexi-zhang.jpg"
+                alt="Portrait of Gary Zhexi Zhang"
+              />
+            </a>
+            <div class="team-bio">
+              <h3>Gary Zhexi Zhang</h3>
+              <p>
+                Gary Zhexi Zhang is an artist and writer whose work explores
+                systemic connections between cosmology, technology, and the
+                economy. He publishes widely on art, technology, economy, and
+                China.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="interlocutors-section"
+        aria-labelledby="interlocutors-title"
+      >
+        <h2 id="interlocutors-title">Interlocutors</h2>
+        <ul class="interlocutors-list">
+          <li>
+            <a href="https://sophiedyer.net/" target="_blank" rel="noopener"
+              >Sophie Dyer</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://politicalscience.jhu.edu/directory/tim-sahay/"
+              target="_blank"
+              rel="noopener"
+              >Tim Sahay</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.lse.ac.uk/people/jacob-bolton"
+              target="_blank"
+              rel="noopener"
+              >Jacob Bolton</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://dantaeyoung.com/hello"
+              target="_blank"
+              rel="noopener"
+              >Dan Taeyoung</a
+            >
+          </li>
+          <li>
+            <a href="https://www.autogena.org/" target="_blank" rel="noopener"
+              >Joshua Portway and Lise Autogena</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.convivialconservation.com/team/louise-carver/"
+              target="_blank"
+              rel="noopener"
+              >Louise Carver</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://re-imagine-europe.eu/community/miriam-matthiessen/"
+              target="_blank"
+              rel="noopener"
+              >Miriam Matthiessen</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/mercedes-garc%C3%ADa-p%C3%A9rez-894b2586/"
+              target="_blank"
+              rel="noopener"
+              >Mercedes García Perez</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://green-week.event.europa.eu/speakers-2026/anthony-agotha_en"
+              target="_blank"
+              rel="noopener"
+              >Tony Agotha</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/jakob-gomolka-018071256/"
+              target="_blank"
+              rel="noopener"
+              >Jakob Gomolka</a
+            >
+          </li>
+          <li>
+            <a href="https://sebacalfuqueo.com/" target="_blank" rel="noopener"
+              >Seba Calfuqueo</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section class="contact-section" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact</h2>
+        <div class="contact-grid">
+          <p>
+            This is an ongoing project rooted in collaboration, exchange and
+            transdisciplinarity. If what we propose resonates with you or moves
+            you, please contact us. We would love to meet you and hear your
+            thoughts.
+          </p>
+          <a href="mailto:hey@cloudgardens.info">hey@cloudgardens.info</a>
+        </div>
+      </section>
+
+      <footer class="project-footer" aria-label="Project credits">
+        <section class="footer-panel footer-framework">
+          <p class="footer-kicker">Project conceived under the framework of</p>
+          <a
+            href="https://tba21.org/organismoanouno"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="footer-logo footer-logo-organismo"
+              src="./credits/organismo-tba21-logo.png"
+              alt="Organismo and TBA21 Academy"
+            />
+          </a>
+          <div class="footer-logo-row">
+            <a
+              href="https://www.museothyssen.org/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                class="footer-logo footer-logo-mntb"
+                src="./credits/mntb-ministry-logo.png"
+                alt="Museo Nacional Thyssen-Bornemisza and Ministerio de Cultura"
+              />
+            </a>
+            <a href="https://tba21.org/" target="_blank" rel="noopener">
+              <img
+                class="footer-logo footer-logo-tba21"
+                src="./credits/tba21-academy-logo.png"
+                alt="TBA21 Academy"
+              />
+            </a>
+          </div>
+        </section>
+
+        <section class="footer-panel footer-case">
+          <p class="footer-kicker">As part of the case</p>
+          <h3>Last Resorts</h3>
+          <p>How Climate Imaginaries Come to Matter</p>
+          <p class="footer-with">
+            in partnership with Basque Centre for Climate Change (BC3), with
+            additional support from European External Action Service
+          </p>
+          <a
+            href="https://www.bc3research.org/en/"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="footer-logo footer-logo-bc3"
+              src="./credits/bc3-logo.png"
+              alt="BC3 Basque Centre for Climate Change"
+            />
+          </a>
+        </section>
+
+        <section class="footer-panel footer-team">
+          <p class="footer-kicker">Lead Artist</p>
+          <p class="footer-role-name">Gary Zhexi Zhang</p>
+          <p class="footer-kicker">TBA-21 Co-ordinator</p>
+          <p class="footer-role-name">Lucas Orozco</p>
+          <p class="footer-kicker">Team</p>
+          <ul>
+            <li>Inês Barros</li>
+            <li>Hugo Félix Garcia</li>
+            <li>Julian Mauricio Guerrero</li>
+            <li>Mahwish Khallil</li>
+            <li>Sarina Lincoln</li>
+            <li>Harry Meadows</li>
+            <li>Lucia Rebolino</li>
+          </ul>
+        </section>
+
+        <section class="footer-panel footer-legal">
+          <p>
+            The contents presented on this website are the exclusive work of the
+            researchers of Organismo 2026. TBA21-Academy and Museo Nacional
+            Thyssen-Bornemisza do not hold editorial control over these contents
+            and are not responsible for the opinions or representations
+            expressed therein. The authors retain their copyright, and the
+            above-mentioned institutions respect and use their works in
+            accordance with the terms agreed upon in the program. All creations
+            developed within the framework of the Organismo project are under
+            the Creative Commons CC BY-SA 4.0 license.
+          </p>
+        </section>
+      </footer>
+    </section>
+
+    <div class="hover-preview" aria-hidden="true">
+      <div class="preview-media preview-image">image</div>
+    </div>
+
+  </body>
+</html>
