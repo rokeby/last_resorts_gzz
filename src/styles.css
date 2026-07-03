@@ -43,22 +43,14 @@ body {
   isolation: isolate;
 }
 
-#three,
-#ascii {
+.hero-video-bg {
   position: absolute;
   inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   display: block;
-}
-
-#three {
-  filter: grayscale(1) contrast(1.35) brightness(0.78);
-}
-
-#ascii {
-  z-index: 4;
-  mix-blend-mode: normal;
   pointer-events: none;
 }
 
@@ -66,10 +58,6 @@ body {
   background:
     radial-gradient(circle at 50% 36%, rgba(210, 210, 205, 0.46), transparent 34%),
     linear-gradient(180deg, #3e3e3c 0%, #8d8d88 56%, #545450 100%);
-}
-
-.takram-page #three {
-  filter: none;
 }
 
 .takram-page #app::before {

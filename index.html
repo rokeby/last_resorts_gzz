@@ -7,8 +7,19 @@
   </head>
   <body class="takram-page">
     <main id="app">
-      <canvas id="three"></canvas>
-      <canvas id="ascii"></canvas>
+      <video
+        class="hero-video-bg"
+        poster="./video/hero-poster.jpg"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+      >
+        <source src="./video/hero-loop.webm" type="video/webm" />
+        <source src="./video/hero-loop.mp4" type="video/mp4" />
+      </video>
       <canvas
         id="title"
         class="hover-title-canvas"
@@ -812,21 +823,7 @@
       <div class="preview-media preview-image">image</div>
     </div>
 
-    <!-- Lightweight scripts load eagerly. -->
     <script type="module" src="/src/title.js"></script>
     <script type="module" src="/src/index-list.js"></script>
-    <!-- The hero WebGL cloud renderer is heavy (three.js + ~24MB of
-         precomputed atmosphere textures). Defer it until the page is
-         interactive so content is usable immediately and the clouds
-         stream in afterwards. -->
-    <script type="module">
-      const loadHero = () => import('/src/takram.js');
-      const schedule = () =>
-        'requestIdleCallback' in window
-          ? requestIdleCallback(loadHero, { timeout: 2500 })
-          : setTimeout(loadHero, 400);
-      if (document.readyState === 'complete') schedule();
-      else window.addEventListener('load', schedule, { once: true });
-    </script>
   </body>
 </html>
