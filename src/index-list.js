@@ -1,3 +1,7 @@
+// Load the site stylesheet from an eager entry so page styling is applied
+// immediately, independent of the deferred hero (takram.js) chunk.
+import './styles.css';
+
 // Scrolly essay: hovering a highlighted word reveals a cursor-following image
 // preview. Everything is mockup — the preview box just shows the word's label.
 

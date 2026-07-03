@@ -1,4 +1,5 @@
-import './styles.css';
+// styles.css is imported eagerly from index-list.js so page styling does not
+// depend on this deferred chunk.
 import {
   CanvasTexture,
   Color,
