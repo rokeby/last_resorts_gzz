@@ -279,6 +279,13 @@ h1 {
   opacity: 1;
 }
 
+/* Touch devices can't hover: keep the subtitle visible (like the title). */
+@media (hover: none) {
+  .hero-subtitle {
+    opacity: 1;
+  }
+}
+
 /* gradient that melts the hero's bottom into the white essay below */
 .hero-fade {
   position: absolute;
@@ -391,19 +398,18 @@ h1 {
 .intro-video {
   position: relative;
   width: 100vw;
-  height: min(62.5vw, 88vh);
+  height: min(56.25vw, 88vh);
   margin: clamp(56px, 10vh, 120px) calc(50% - 50vw);
   overflow: hidden;
   background: #050505;
 }
 
-.intro-video video {
+.intro-video iframe {
   display: block;
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   border: 0;
 }
 

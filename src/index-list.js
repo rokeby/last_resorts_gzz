@@ -132,6 +132,55 @@ if (lazyVideos.length) {
   }
 }
 
+// Intro film: lazy-load the Vimeo player when it scrolls near, then seek to
+// data-vimeo-start seconds and pause so that frame shows before the user plays.
+const introVimeo = document.querySelector('.intro-video[data-vimeo]');
+if (introVimeo) {
+  let started = false;
+  const loadIntroVimeo = () => {
+    if (started) return;
+    started = true;
+    const id = Number(introVimeo.dataset.vimeo);
+    const start = parseFloat(introVimeo.dataset.vimeoStart || '0');
+    const script = document.createElement('script');
+    script.src = 'https://player.vimeo.com/api/player.js';
+    script.onload = () => {
+      const player = new window.Vimeo.Player(introVimeo, {
+        id,
+        controls: true,
+        title: false,
+        byline: false,
+        portrait: false,
+        dnt: true
+      });
+      player
+        .ready()
+        .then(() => player.setCurrentTime(start))
+        .then(() => player.pause())
+        .catch(() => {
+          /* seeking/pausing best-effort */
+        });
+    };
+    document.head.appendChild(script);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const introObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          introObserver.disconnect();
+          loadIntroVimeo();
+        });
+      },
+      { rootMargin: '600px 0px' }
+    );
+    introObserver.observe(introVimeo);
+  } else {
+    loadIntroVimeo();
+  }
+}
+
 if (gifDisplay && gifCaptionOptions.length) {
   const selectOption = option => {
     gifDisplay.src = option.dataset.gifSrc;

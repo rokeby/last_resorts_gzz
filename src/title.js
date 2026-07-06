@@ -168,14 +168,20 @@ if (app && canvas) {
     if (hovering || visibleParticles > 0) startFrameLoop();
   }
 
-  app.addEventListener('pointerenter', () => {
-    hovering = true;
-    startFrameLoop();
-  });
-  app.addEventListener('pointerleave', () => {
-    hovering = false;
-    startFrameLoop();
-  });
+  // Touch devices can't hover, so the assemble-on-hover interaction never
+  // fires. There, auto-assemble the title on load and keep it complete.
+  const noHover = window.matchMedia('(hover: none)').matches;
+
+  if (!noHover) {
+    app.addEventListener('pointerenter', () => {
+      hovering = true;
+      startFrameLoop();
+    });
+    app.addEventListener('pointerleave', () => {
+      hovering = false;
+      startFrameLoop();
+    });
+  }
 
   let resizeId;
   window.addEventListener('resize', () => {
@@ -193,6 +199,7 @@ if (app && canvas) {
       /* ignore */
     }
     await buildParticles();
+    if (noHover) hovering = true;
     startFrameLoop();
   }
 
